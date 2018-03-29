@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
+import App from './App'
 
-render(
-    <div>Hello React!</div>,
-    document.getElementById('app')
-);
+const renderDom = Component => {
+    render(
+        <Component />,
+        document.getElementById('app')
+    );
+}
+renderDom(App);
