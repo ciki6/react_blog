@@ -1,0 +1,164 @@
+body {
+	background-color: #f9f9f9;
+}
+
+.fl {
+	float: left;
+}
+.pagination {
+	margin: 15px 0;
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+.block-link {
+	background-color: #fff;
+	box-shadow: 0 0 5px #a8a8a8;
+	transition: box-shadow ease-in 300ms;
+	> a {
+		display: inline-block;
+		width: 100%;
+		padding: 8px;
+		font-size: 12px;
+		text-align: center;
+		transition: font-weight ease-in 300ms;
+		&:hover {
+			font-weight: bold;
+		}
+	}
+	&:hover {
+		box-shadow: 0 0 16px #aaa;
+	}
+}
+
+.panel-heading {
+	padding: 10px 15px;
+	color: #333;
+	font-size: 16px;
+	background-color: #f8f8f8;
+	border-bottom: 1px solid #ddd;
+}
+.panel-body {
+	padding: 15px;
+}
+
+.clearfix{
+	*zoom:1;
+}
+.clearfix:after { 
+	content:"";
+	display:table;
+	clear:both;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (max-width: 767px) {
+	.container {
+		padding-right: 8px;
+		padding-left: 8px;
+	}
+	.ant-back-top {
+		right: 46px;
+		bottom: 36px;
+	}
+	.content-wrap {
+		overflow-x: hidden;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1100px;
+	}
+}
+
+// animate.css
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+}
+
+@keyframes zoomIn {
+	from {
+		opacity: 0;
+		-webkit-transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3);
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+.zoomIn {
+	-webkit-animation-name: zoomIn;
+	animation-name: zoomIn;
+}
+
+@keyframes rotateInUpRight {
+	from {
+		transform-origin: right bottom;
+		transform: rotate3d(0, 0, 1, -90deg);
+		opacity: 0;
+	}
+
+	to {
+		transform-origin: right bottom;
+		transform: none;
+		opacity: 1;
+	}
+}
+.rotateInUpRight {
+	animation-name: rotateInUpRight;
+}
+
+@keyframes rotateInDownLeft {
+	from {
+		transform-origin: left bottom;
+		transform: rotate3d(0, 0, 1, -45deg);
+		opacity: 0;
+	}
+	
+	to {
+		transform-origin: left bottom;
+		transform: none;
+		opacity: 1;
+	}
+}
+.rotateInDownLeft {
+	animation-name: rotateInDownLeft;
+}

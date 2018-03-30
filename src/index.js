@@ -1,11 +1,22 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './App'
+import 'whatwg-fetch';
+import 'babel-polyfill';
 
-const renderDom = Component => {
-    render(
-        <Component />,
-        document.getElementById('app')
-    );
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+// import Promise from 'promise-polyfill';
+
+import store from './store.js';
+import Routes from './routes.js';
+
+
+if (!window.Promise) {
+	window.Promise = Promise;
 }
-renderDom(App);
+
+ReactDOM.render(
+	<Provider store={store}>
+		<Routes />
+	</Provider>,
+	document.getElementById('react-root')
+)
