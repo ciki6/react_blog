@@ -1,0 +1,3 @@
+export const FETCH_START = 'TIMELINE/START';
+export const FETCH_SUCCEED = 'TIMELINE/SUCCEED';
+export const FETCH_FAIL = 'TIMELINE/FAIL';
