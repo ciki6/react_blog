@@ -1,0 +1,40 @@
+.gossip-wrap {
+	padding: 35px 25px 20px 40px;
+	box-shadow: 0 0 5px #555;
+}
+
+.gossip-item {
+	padding: 16px;
+	margin-bottom: 5px;
+	font-size: 14px;
+	border-radius: 10px;
+	background: #f0f0f0;
+}
+
+.gossip-author {
+	margin-top: 5px;
+	color: #888;
+	font-size: 13px;
+	text-align: right;
+}
+
+.gossip-img {
+	> img {
+		width: 100%;
+		border-radius: 4px;
+	}
+}
+
+.gossip-detail {
+	pre {
+		white-space: pre-wrap;
+		font-family: "Microsoft Yahei";
+	}
+}
+
+@media(max-width: 767px) {
+	.gossip-wrap {
+		padding: 15px 12px;
+		box-shadow: 0 0 5px #555;
+	}
+}

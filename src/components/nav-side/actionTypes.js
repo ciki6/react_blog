@@ -1,0 +1,3 @@
+export const FETCH_START = 'NAVSIDE/START';
+export const FETCH_SUCCEED = 'NAVSIDE/SUCCEED';
+export const FETCH_FAIL = 'NAVSIDE/FAIL';

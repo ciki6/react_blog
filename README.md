@@ -1,1 +1,1 @@
-# webpack4
+# webpack4 + react + redux + react-router + es6/7 + express
