@@ -4,7 +4,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
 	devtool: 'cheap-module-source-map',
-	entry: __dirname + "/app/index.js",
+	entry: __dirname + "/src/index.js",
 	output: {
 		path: __dirname + "/public/script/",
 		filename: "bundle.[chunkHash:8].js",

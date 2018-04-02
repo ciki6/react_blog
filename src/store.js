@@ -17,8 +17,6 @@ const originalReducers = {
 const reducer = combineReducers(originalReducers);
 
 if (!prod) {
-	const Perf = require('react-addons-perf');
-	win.Perf = Perf;
 	middleware.push(require('redux-immutable-state-invariant').default());
 }
 
