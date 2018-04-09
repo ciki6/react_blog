@@ -34,6 +34,11 @@ module.exports = {
 		}]
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: '"development"'
+			}
+		}),
 		new ExtractTextPlugin("../style/style.css", {
 			allChunks: true
 		}),

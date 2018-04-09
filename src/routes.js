@@ -28,7 +28,7 @@ const resetState = (reducer, initialState, stateKey, setting = {}) => {
 const getHomePage = (location, callback) => {
 	require.ensure([], function (require) {
 		const {Home} = require('./containers/Home.js');
-		document.title = "Marco的个人博客";
+		document.title = "个人博客";
 		callback(null, Home);
 	}, 'home');
 }

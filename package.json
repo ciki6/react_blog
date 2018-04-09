@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "webpack --config webpack.config.dev.js --watch",
-    "dll": "cross-env NODE_ENV=production webpack --config dll.config.prod.js",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js"
+    "dev": "SET NODE_ENV=development webpack --config webpack.config.dev.js --watch",
+    "dll": "SET NODE_ENV=production webpack --config dll.config.prod.js",
+    "build": "SET NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
