@@ -20,7 +20,7 @@ class NavTop extends Component {
 	static contextTypes = {
 		router: React.PropTypes.object
 	}
-
+	
 	onSearch = (keyword) => {
 		if(keyword.trim() == '') {
 			return;

@@ -7,8 +7,6 @@ import {reducer as naveSideReducer, stateKey} from './components/nav-side';
 
 let prod = process.env.NODE_ENV === 'production' ? true : false;
 
-console.log(process);
-
 const middleware = [thunkMiddleware];
 const win = window;
 

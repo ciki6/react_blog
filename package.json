@@ -4,9 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "SET NODE_ENV=development webpack --config webpack.config.dev.js --watch",
-    "dll": "SET NODE_ENV=production webpack --config dll.config.prod.js",
-    "build": "SET NODE_ENV=production webpack --config webpack.config.prod.js"
+    "dev": "webpack --config webpack.config.dev.js --watch",
+    "dll": "cross-env NODE_ENV=production webpack --config dll.config.prod.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
@@ -31,10 +31,10 @@
     "morgan": "^1.9.0",
     "mysql": "^2.15.0",
     "promise-polyfill": "^7.1.1",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-redux": "^5.0.7",
-    "react-router": "^4.2.0",
+    "react-router": "^3.0.5",
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",

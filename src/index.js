@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 // import Promise from 'promise-polyfill';
 
-import store from './store.js';
-import Routes from './routes.js';
+import store from './Store.js';
+import Routes from './Routes.js';
 
 
 if (!window.Promise) {
