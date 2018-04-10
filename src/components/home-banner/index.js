@@ -28,7 +28,7 @@ const HomeBanner = () => {
 					<div className="day-word">
 						<img src="/image/bord.jpg" alt=""/>
 						<p style={titleStyle}>每日一语</p>
-						<p style={bodyStyle}>毕竟不是作家，写不出那么好的文章 — 因为没有丰富阅历和经验！闲下来时多看看书，书本里的故事总有我要学的人生。</p>
+						<p style={bodyStyle}>什么是命运 -- 命是弱者借口。运乃强者谦词</p>
 					</div>
 				</Col>
 			</Row>

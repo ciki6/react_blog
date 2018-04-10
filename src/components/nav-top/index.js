@@ -94,9 +94,9 @@ class NavTop extends Component {
 				<div className="container">
 					<div className="site-logo">
 						<h2>
-							<span>Ma</span><span>rco</span>
+							<span>Ao</span><span>tu</span>
 						</h2>
-						<p>我想去天堂，但我不想死</p>
+						<p>别人稍一注意你你就敞开心扉，你这不是坦率，是孤独。</p>
 					</div>
 					<div className="navbar-collapse">
 						<Col xs={24} sm={0}>

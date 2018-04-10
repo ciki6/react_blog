@@ -25,7 +25,7 @@ class NavSide extends Component {
                     <div className="panel-body">
                         <div className="user-portrait">
                             <img src="/image/me.jpg" alt=""/>
-                            <h3>Marco</h3>
+                            <h3>Aotu</h3>
                             <p>{portrait.intro}</p>
                         </div>
                         <div className="statistics">
@@ -41,16 +41,16 @@ class NavSide extends Component {
                     <div className="panel-heading">FOLLOW ME</div>
                     <div className="panel-body text-center">
                         <p className="follow-link">
-                            <a href="https://github.com/Marco2333" target="_blank"> <Icon type="github"/></a>
+                            <a href="https://github.com/ciki6" target="_blank"> <Icon type="github"/></a>
                         </p>
                         <p className="follow-link" style={{transform: "rotate(180deg)"}}>
-                            <a href="https://github.com/Marco2333" target="_blank"><Icon type="github"/></a>
+                            <a href="https://github.com/ciki6" target="_blank"><Icon type="github"/></a>
                         </p>
                         <p className="follow-link" style={{transform: "rotate(90deg)"}}>
-                            <a href="https://github.com/Marco2333" target="_blank"><Icon type="github"/></a>
+                            <a href="https://github.com/ciki6" target="_blank"><Icon type="github"/></a>
                         </p>
                         <p className="follow-link" style={{transform: "rotate(270deg)"}}>
-                            <a href="https://github.com/Marco2333" target="_blank"><Icon type="github"/></a>
+                            <a href="https://github.com/ciki6" target="_blank"><Icon type="github"/></a>
                         </p>
                     </div>
                 </div>

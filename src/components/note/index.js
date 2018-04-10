@@ -34,7 +34,7 @@ class Note extends Component {
 				<div className="note-abstract">
 					{escape2Html(detail).replace(/<\/?[^>]+(>|$)/g, "")}
 				</div>
-				<p className="note-author">Marco</p>
+				<p className="note-author">Aotu</p>
 				<Modal
 					title={title}
 					visible={this.state.visible}
