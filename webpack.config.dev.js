@@ -8,14 +8,13 @@ module.exports = {
 	devtool: 'cheap-module-eval-source-map',
 	entry: __dirname + "/src/index.js",
 	output: {
-		path: __dirname + "/public/",
+		path: __dirname + "/public/dist/",
 		filename: "bundle-[hash].js",
-		// chunkFilename: 'chunk/[name].chunk.js',
-		// publicPath: '/script/'
+		publicPath: '/dist/'
 	},
 	module: {
 		rules: [{
-			test: /\.js$/,
+			test: /(\.jsx|\.js)$/,
 			exclude: /node_modules/,
 			loader: 'babel-loader'
 		}, {
@@ -53,7 +52,7 @@ module.exports = {
 			},
 			canPrint: true
 		}),
-		new CleanWebpackPlugin('public/*.js', {
+		new CleanWebpackPlugin('dist/*.*', {
 			root: __dirname,
 			verbose: true,
 			dry: false

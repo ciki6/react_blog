@@ -118,7 +118,7 @@ router.get('/get-navside-info', function(req, res, next) {
 
 
 router.get('*', function(req, res, next) {
-	res.sendfile(path.join(__dirname, '../../public/index.html')); // 发送静态文件
+	res.sendfile(path.join(__dirname, '../../public/dist/index.html')); // 发送静态文件
 });
 
 
