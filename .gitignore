@@ -62,3 +62,8 @@ typings/
 
 #vscode
 .vscode/
+
+#dist
+.public/*.js
+.public/*.jpg
+.public/*.html

@@ -46,6 +46,7 @@ module.exports = {
 		}]
 	},
 	plugins: [
+		new webpack.BannerPlugin('版权所有，翻版必究'),
 		new webpack.DefinePlugin({
 			'process.env': {
 				'NODE_ENV': JSON.stringify('production')
@@ -53,10 +54,6 @@ module.exports = {
 		}),
 		new ExtractTextPlugin("../style/style.css", {
 			allChunks: true
-		}),
-		new webpack.DllReferencePlugin({
-			context: __dirname,
-			manifest: require('./manifest.json')
 		}),
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /.css$/g,

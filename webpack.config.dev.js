@@ -1,15 +1,17 @@
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',
 	entry: __dirname + "/src/index.js",
 	output: {
-		path: __dirname + "/public/script/",
-		filename: "bundle.js",
-		chunkFilename: 'chunk/[name].chunk.js',
-		publicPath: '/script/'
+		path: __dirname + "/public/",
+		filename: "bundle-[hash].js",
+		// chunkFilename: 'chunk/[name].chunk.js',
+		// publicPath: '/script/'
 	},
 	module: {
 		rules: [{
@@ -34,18 +36,13 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		new webpack.DefinePlugin({
-			'process.env': {
-				NODE_ENV: '"development"'
-			}
-		}),
+		new HtmlWebpackPlugin({
+            template: __dirname + "/src/index.html" 
+        }),
 		new ExtractTextPlugin("../style/style.css", {
 			allChunks: true
 		}),
-		new webpack.DllReferencePlugin({
-			context: __dirname,
-			manifest: require('./manifest.json')
-		}),
+		new webpack.HotModuleReplacementPlugin(),
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /.css$/g,
 			cssProcessor: require('cssnano'),
@@ -55,6 +52,11 @@ module.exports = {
 				}
 			},
 			canPrint: true
+		}),
+		new CleanWebpackPlugin('public/*.js', {
+			root: __dirname,
+			verbose: true,
+			dry: false
 		})
 	]
 }
