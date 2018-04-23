@@ -9,7 +9,7 @@ module.exports = {
 	entry: __dirname + "/src/index.js",
 	output: {
 		path: __dirname + "/public/dist/",
-		filename: "bundle-[hash].js",
+		filename: "[name]-[hash].js",
 		publicPath: '/dist/'
 	},
 	module: {
