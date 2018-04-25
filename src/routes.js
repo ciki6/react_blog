@@ -4,7 +4,7 @@ import {combineReducers} from 'redux';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {syncHistoryWithStore} from 'react-router-redux';
 
-import store from './store.js';
+import store from './Store.js';
 import App from './containers/App';
 
 
