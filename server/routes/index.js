@@ -69,7 +69,7 @@ router.get('/get-navside-info', function(req, res, next) {
 		"select id, title from article where status = 1 order by created_at desc limit 10",
 		"select id, theme from category where status = 1",
 		"select id, text, url from link where status = 1",
-		"select distinct tag from article where status = 1 order by created_at desc limit 15",
+		"SELECT tag FROM (select DISTINCT tag, created_at from article where status = 1 order by created_at desc ) a limit 15",
 		"select count(*) as count from article where status = 1"
 	];
 
@@ -88,7 +88,6 @@ router.get('/get-navside-info', function(req, res, next) {
 	let p = Promise.all(ps);
 	p.then(function(out) {
 		let tags = [];
-
 		for (item of out[4]) {
 			tags.push(...(item['tag'].trim().replace(/\s/, ' ').split(" ")))
 		}
