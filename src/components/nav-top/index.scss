@@ -2,13 +2,12 @@
 
 $nav-top-height: 40px;
 $pop-item-height: 44px;
-$nav-top-color: #56adf9;
+$nav-top-color: #3b3b3b;
 $xs-nav-top-wrap: 72px;
 
 .nav-top-wrap {
 	position: relative;
-	background: #555;
-	background: linear-gradient(#444,#666);
+	background: rgb(255, 255, 255);
 }
 
 .navbar-collapse {
@@ -57,9 +56,13 @@ $xs-nav-top-wrap: 72px;
 
 .site-logo {
 	height: 110px;
+	background-image: url('/image/title.jpg');
+	background-position-x: right;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
 	> h2 {
 		font-size: 38px;
-		color: #fff;
+		color: #000;
 	}
 	span:first-child {
 		margin-right: 1px;
@@ -67,7 +70,7 @@ $xs-nav-top-wrap: 72px;
 	}
 	> p {
 		margin: -3px 0 0 3px;
-		color: #fff;
+		color: $main-color;
 	}
 }
 

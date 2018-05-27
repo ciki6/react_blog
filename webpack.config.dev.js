@@ -52,7 +52,7 @@ module.exports = {
 			},
 			canPrint: true
 		}),
-		new CleanWebpackPlugin('public/dist', {
+		new CleanWebpackPlugin('public/dist/*.*', {
 			root: __dirname,
 			verbose: true,
 			dry: false
