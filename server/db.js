@@ -1,15 +1,16 @@
 // 连接MySQL
-var mysql = require('mysql');
-var pool = mysql.createPool({
-    host: '120.78.166.246',
+let mysql = require('mysql');
+let pool = mysql.createPool({
+    host: '45.76.55.25',
     port: 3306,
     user: 'root',
-    password: 'dsbzsw',
+    password: 'zswdsb',
     database: 'blog',
     dateStrings: true
 });
 
 function query(sql, callback) {
+    console.log(sql);
     pool.getConnection(function (err, connection) {
         // Use the connection
         connection.query(sql, function (err, rows) {

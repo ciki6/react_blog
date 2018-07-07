@@ -52,8 +52,8 @@ module.exports = {
 			},
 			canPrint: true
 		}),
-		new CleanWebpackPlugin('public/dist/*.*', {
-			root: __dirname,
+		new CleanWebpackPlugin(['dist'], {
+			root: __dirname + '/public',
 			verbose: true,
 			dry: false
 		})
