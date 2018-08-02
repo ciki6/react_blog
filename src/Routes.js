@@ -23,7 +23,7 @@ const resetState = (reducer, initialState, stateKey, setting = {}) => {
 	}), {
 		...currentState
 	});
-}
+};
 
 const getHomePage = (location, callback) => {
 	require.ensure([], function (require) {
@@ -31,7 +31,7 @@ const getHomePage = (location, callback) => {
 		document.title = "个人博客";
 		callback(null, Home);
 	}, 'home');
-}
+};
 
 const getArticlePage = (location, callback) => {
 	require.ensure([], function (require) {
@@ -40,7 +40,7 @@ const getArticlePage = (location, callback) => {
 		document.title = "文章列表";
 		callback(null, Article);
 	}, 'article');
-}
+};
 
 const getArticleDetailPage = (location, callback) => {
 	
@@ -55,7 +55,7 @@ const getArticleDetailPage = (location, callback) => {
 		document.title = "文章详情";
 		callback(null, ArticleDetail);
 	}, 'article-detail');
-}
+};
 
 const getTimelinePage = (location, callback) => {
 		
@@ -67,7 +67,7 @@ const getTimelinePage = (location, callback) => {
 		document.title = "文章归档";
 		callback(null, TimeLine);
 	}, 'timeline');
-}
+};
 
 const getSearchPage = (location, callback) => {
 		
@@ -77,7 +77,7 @@ const getSearchPage = (location, callback) => {
 		document.title = "搜索结果";
 		callback(null, Search);
 	}, 'search');
-}
+};
 
 const getCategoryPage = (location, callback) => {
 		
@@ -87,7 +87,7 @@ const getCategoryPage = (location, callback) => {
 		document.title = "文章分类";
 		callback(null, Category);
 	}, 'category');
-}
+};
 
 const getTagPage = (location, callback) => {
 		
@@ -97,7 +97,7 @@ const getTagPage = (location, callback) => {
 		document.title = "文章标签";
 		callback(null, Tag);
 	}, 'tag');
-}
+};
 
 const getGatherPage = (location, callback) => {
 		
@@ -109,7 +109,7 @@ const getGatherPage = (location, callback) => {
 		document.title = "点点滴滴";
 		callback(null, Gather);
 	}, 'gather');
-}
+};
 
 const getGossipPage = (location, callback) => {
 		
@@ -121,7 +121,7 @@ const getGossipPage = (location, callback) => {
 		document.title = "碎言碎语";
 		callback(null, Gossip);
 	}, 'gossip');
-}
+};
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -140,6 +140,6 @@ const Routes = () => (
 			<Route name="gossip" breadcrumbName="慢生活" path="gossip" getComponent={getGossipPage} />
 		</Route>
 	</Router>
-)
+);
 
 export default Routes;

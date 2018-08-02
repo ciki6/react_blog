@@ -1,7 +1,7 @@
 // 连接MySQL
 let mysql = require('mysql');
 let pool = mysql.createPool({
-    host: '45.76.55.25',
+    host: '149.28.68.70',
     port: 3306,
     user: 'root',
     password: 'zswdsb',

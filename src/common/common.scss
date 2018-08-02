@@ -5,6 +5,43 @@ body {
 .fl {
 	float: left;
 }
+
+.loader:empty {
+	$base-color: #3197ef !global;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	padding: 4px;
+	background: none;
+	box-shadow: 0 -30px 0 0 lighten($base-color, 60%),
+	15px -26px 0 0 lighten($base-color, 50%),
+	26px -15px 0 0 lighten($base-color, 40%),
+	30px 0 0 0 lighten($base-color, 30%),
+	26px 15px 0 0 lighten($base-color, 20%),
+	15px 26px 0 0 lighten($base-color, 10%),
+	0 30px 0 0 $base-color,
+	-15px 26px 0 0 darken($base-color, 3%),
+	-26px 15px 0 0 darken($base-color, 6%),
+	-30px 0 0 0 darken($base-color, 9%),
+	-26px -15px 0 0 darken($base-color, 12%),
+	-15px -26px 0 0 darken($base-color, 15%);
+	animation: loading 0.2s infinite steps(12, start);
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 .pagination {
 	margin: 15px 0;
 	text-align: right;
