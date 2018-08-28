@@ -1,6 +1,7 @@
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
 	devtool: 'cheap-module-source-map',
@@ -20,41 +21,46 @@ module.exports = {
 			test: /\.(png|jpg|gif)$/,
 			loader: 'url-loader?limit=40000'
 		}, {
-			test: /\.css$/,
-			use: ExtractTextPlugin.extract({
-				fallback: "style-loader",
-				use: {
-					loader: 'css-loader',
-					options: {
-						minimize: true //css压缩
-					}
-				}
-			})
-		}, {
-			test: /\.scss$/,
-			use: ExtractTextPlugin.extract({
-				fallback: 'style-loader',
-				use: [{
-						loader: 'css-loader',
-						options: {
-							minimize: true
-						}
-					},
-					'sass-loader'
-				]
-			})
-		}]
+      test: /\.(sa|sc|c)ss$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            // you can specify a publicPath here
+            // by default it use publicPath in webpackOptions.output
+            publicPath: '../style/'
+          }
+        },
+        "css-loader", 'sass-loader'
+      ]
+    }]
 	},
 	plugins: [
-		new webpack.BannerPlugin('版权所有，翻版必究'),
+		// new webpack.BannerPlugin('版权所有，翻版必究'),
 		new webpack.DefinePlugin({
 			'process.env': {
 				'NODE_ENV': JSON.stringify('production')
 			}
 		}),
-		new ExtractTextPlugin("../style/style.css", {
-			allChunks: true
-		}),
+    new webpack.optimize.SplitChunksPlugin({
+      chunks: "all",
+      minSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      name: true,
+      cacheGroups: {
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        }
+      }
+    }),
 		new OptimizeCssAssetsPlugin({
 			assetNameRegExp: /.css$/g,
 			cssProcessor: require('cssnano'),
@@ -64,14 +70,6 @@ module.exports = {
 				}
 			},
 			canPrint: true
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			output: {
-				comments: false
-			},
-			compress: {
-				warnings: false
-			}
 		})
 	]
-}
+};
